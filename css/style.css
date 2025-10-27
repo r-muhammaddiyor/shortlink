@@ -101,6 +101,12 @@ body {
   color: var(--kulirang);
   font-size: 15px;
   font-weight: bold;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-link:hover {
+  border-bottom: 2px solid var(--blue);
+  transition: 0.5s;
 }
 
 .burger-menu {
@@ -112,6 +118,10 @@ body {
 }
 
 .bars {
+  display: none;
+}
+
+.closing {
   display: none;
 }
 
@@ -168,6 +178,15 @@ body {
   background-color: var(--blue);
   padding: 13px 40px;
   color: white;
+}
+
+.hero-btn:hover {
+  border: 2px solid var(--blue);
+  border-radius: 28px;
+  background-color: transparent;
+  padding: 13px 40px;
+  color: var(--blue);
+  transition: 0.5s;
 }
 
 .hero-img {
@@ -305,6 +324,17 @@ body {
   font-weight: bold;
 }
 
+.bost-btn:hover {
+  border: 2px solid var(--blue);
+  background-color: transparent;
+  border-radius: 28px;
+  font-size: 20px;
+  padding: 13px 40px;
+  color: var(--blue);
+  font-weight: bold;
+  transition: 0.5s;
+}
+
 /* Footer */
 
 .footer {
@@ -350,6 +380,10 @@ body {
 .footer-column_links {
   color: #bfbfbf;
   margin-bottom: 10px;
+}
+
+.footer-column_links:hover {
+  color: var(--white);
 }
 
 .footer-icons {
@@ -618,12 +652,12 @@ body {
 
   .burger-menu {
     display: block;
-    position: absolute;
-    top: -150%;
+    position: fixed;
+    top: 0;
     left: 0;
     z-index: 5;
     padding: 70px 20px;
-    background-color: var(--kulirang);
+    background-color: white;
     width: 300px;
     height: 100vh;
     -webkit-transform: translateX(-100%);
@@ -642,7 +676,7 @@ body {
   }
 
   .burgel-menu-nav-link {
-    color: var(--white);
+    color: var(--black);
     font-size: 22px;
     font-weight: bold;
     border-bottom: 2px solid transparent;
@@ -658,12 +692,31 @@ body {
     width: 30px;
     height: 17px;
     z-index: 999;
+    position: absolute;
+    right: 20px;
+    top: 0;
+  }
+
+  .check:checked ~ .closing {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #bfbfbf69;
+    z-index: 4;
+    cursor: pointer;
+  }
+
+  .closing {
+    display: block;
   }
 
   .check:checked ~ .burger-menu {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    -webkit-box-shadow: 10px 1px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 10px 1px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 10px 1px 8px 0px rgba(34, 60, 80, 0.2);
   }
 
   .check {
@@ -894,6 +947,25 @@ body {
     border-radius: 28px;
     background-color: var(--blue);
     border: 2px solid transparent;
+  }
+
+  .burger-menu-btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--blue);
+    color: #2bd0d0;
+  }
+
+  .burger-menu-btn:nth-child(2) {
+    background-color: transparent;
+    border: 2px solid var(--blue);
+    color: #2bd0d0;
+  }
+
+  .burger-menu-btn:nth-child(2):active {
+    background-color: var(--blue);
+    border: 2px solid transparent;
+    color: white;
+    transition: 0.5s;
   }
 
   .header-buttons {
